@@ -8,7 +8,9 @@
     "format": "prettier --write \"src/**/*.ts\"",
     "format:check": "prettier --check \"src/**/*.ts\"",
     "lint": "eslint \"src/**/*.ts\"",
-    "lint:fix": "eslint \"src/**/*.ts\" --fix"
+    "lint:fix": "eslint \"src/**/*.ts\" --fix",
+    "prepare": "husky",
+    "test": "mocha --require ts-node/register \"test/**/*.ts\""
   },
   "keywords": [],
   "author": "",
@@ -21,11 +23,17 @@
     "webpack-dev-server": "^5.2.2"
   },
   "devDependencies": {
+    "@types/chai": "^5.2.2",
+    "@types/mocha": "^10.0.10",
     "@typescript-eslint/eslint-plugin": "^8.46.0",
     "@typescript-eslint/parser": "^8.46.0",
+    "chai": "^6.2.0",
     "eslint": "^9.37.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-prettier": "^5.5.4",
-    "prettier": "^3.6.2"
+    "husky": "^9.1.7",
+    "mocha": "^11.7.4",
+    "prettier": "^3.6.2",
+    "ts-node": "^10.9.2"
   }
 }
