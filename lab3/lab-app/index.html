@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Система Управління Бібліотекою</title>
+    <link rel="stylesheet" href="libs/bootstrap.css">
+    <style>
+        /* Стилі для валідації полів вводу (червона рамка). */
+        .is-invalid { border-color: #dc3545; }
+        /* Повідомлення про помилку за замовчуванням приховане. */
+        .invalid-feedback { display: none; width: 100%; margin-top: .25rem; font-size: .875em; color: #dc3545; }
+        /* Показуємо повідомлення про помилку, коли у поля є клас is-invalid. */
+        .is-invalid ~ .invalid-feedback { display: block; }
+
+        /* Наші власні класи для кольорових кнопок. */
+        .btn-lilac {
+            background-color: #d8bde2;
+            border-color: #d8bde2;
+            color: #212529; /* Темний колір для тексту, щоб його було видно. */
+        }
+        .btn-pastel-green {
+            background-color: #b2d8b2;
+            border-color: #b2d8b2;
+            color: #212529;
+        }
+        .btn-pastel-orange {
+            background-color: #ffc8a2;
+            border-color: #ffc8a2;
+            color: #212529;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container mt-4">
+    <h1 class="text-center mb-4">Система Управління Бібліотекою</h1>
+
+    <div class="card mb-4">
+        <div class="card-header fw-bold">Додати Книгу</div>
+        <div class="card-body">
+            <form id="addBookForm" novalidate>
+                <div class="mb-3">
+                    <label for="bookTitle" class="form-label">Назва книги</label>
+                    <input type="text" class="form-control" id="bookTitle">
+                    <div class="invalid-feedback">Це поле є обов'язковим.</div>
+                </div>
+                <div class="mb-3">
+                    <label for="bookAuthor" class="form-label">Автор</label>
+                    <input type="text" class="form-control" id="bookAuthor">
+                    <div class="invalid-feedback">Це поле є обов'язковим.</div>
+                </div>
+                <div class="mb-3">
+                    <label for="bookYear" class="form-label">Рік видання</label>
+                    <input type="text" class="form-control" id="bookYear">
+                    <div class="invalid-feedback">Введіть коректний рік (напр. 2023).</div>
+                </div>
+                <button type="submit" class="btn btn-lilac">Додати Книгу</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="card mb-4">
+        <div class="card-header fw-bold">Додати Користувача</div>
+        <div class="card-body">
+            <form id="addUserForm" novalidate>
+                <div class="mb-3">
+                    <label for="userName" class="form-label">Ім'я</label>
+                    <input type="text" class="form-control" id="userName">
+                    <div class="invalid-feedback">Це поле є обов'язковим.</div>
+                </div>
+                <div class="mb-3">
+                    <label for="userEmail" class="form-label">Email</label>
+                    <input type="text" class="form-control" id="userEmail">
+                    <div class="invalid-feedback">Введіть коректний email.</div>
+                </div>
+                <button type="submit" class="btn btn-lilac">Додати Користувача</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="card mb-4">
+        <div class="card-header fw-bold">Список Книг</div>
+        <ul class="list-group list-group-flush" id="bookList"></ul>
+    </div>
+
+    <div class="card mb-4">
+        <div class="card-header fw-bold">Список Користувачів</div>
+        <ul class="list-group list-group-flush" id="userList"></ul>
+    </div>
+</div>
+
+<script src="dist/bundle.js"></script>
+</body>
+</html>
